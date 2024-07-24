@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/services.dart';
 
 class CalculatorUI extends StatefulWidget {
+  //const CalculatorUI(String btntxt, {super.key});
+
   //const Calculator({super.key});
   @override
   State<CalculatorUI> createState() => _CalculatorUIState();
 }
-
 class _CalculatorUIState extends State<CalculatorUI> {
+
+String number1 = ""; // . 0-9
+String operand = ""; // = - * /
+String number2 = ""; // . 0-9
+
 
   @override 
 Widget calcbutton(String btntxt,Color btncolor, Color txtcolor){
@@ -131,7 +139,7 @@ padding: EdgeInsets.all(20),
   }
 }
 
-
+  //calculator logic
    dynamic text ='0';
   double numOne = 0;
   double numTwo = 0;
@@ -140,7 +148,7 @@ padding: EdgeInsets.all(20),
   dynamic finalResult = '';
   dynamic opr = '';
   dynamic preOpr = '';
-   void calculation(btnText) {
+   void Calculator(btnText) {
 
 
     if(btnText  == 'AC') {
@@ -210,7 +218,6 @@ padding: EdgeInsets.all(20),
     setState(() {
           text = finalResult;
         });
-
   }
 
 
@@ -246,7 +253,7 @@ padding: EdgeInsets.all(20),
     }
     return result; 
   }
-
+}
 
 
 
